@@ -1,0 +1,210 @@
+#create_content {
+    padding-top: 130px;
+    padding-bottom: 100px;
+    .createMain_container {
+        padding: 0 50px;
+        display: flex;
+        justify-content: space-around;
+
+        .create_leftCamera {
+            display: flex;
+            align-items: center;
+            margin-top: 100px;
+            align-self: baseline;
+        }
+
+        .create_center {
+            width: 60%;
+            text-align: center;
+            .center_screen {
+                border: 1px solid $violet;
+                body.darkMode & {
+                    border: 1px solid white;
+                }
+                height: 390px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                overflow: hidden;
+
+                .screen_topCorners {
+                    padding: 25px;
+                    padding-bottom: 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    .screen_topRight {
+                        width: 25px;
+                        height: 25px;
+                        border-top: 1px solid $aqua;
+                        border-right: 1px solid $aqua;
+                    }
+                    .screen_topLeft {
+                        width: 25px;
+                        height: 25px;
+                        border-top: 1px solid $aqua;
+                        border-left: 1px solid $aqua;
+                    }
+                }
+                .screen_botCorners {
+                    padding: 25px;
+                    padding-top: 0px;
+                    display: flex;
+                    justify-content: space-between;
+                    .screen_botRight {
+                        width: 25px;
+                        height: 25px;
+                        border-bottom: 1px solid $aqua;
+                        border-right: 1px solid $aqua;
+                    }
+                    .screen_botLeft {
+                        width: 25px;
+                        height: 25px;
+                        border-bottom: 1px solid $aqua;
+                        border-left: 1px solid $aqua;
+                    }
+                }
+
+                .screen_main {
+                    #main_video,
+                    .main_overlay,
+                    .main_gif {
+                        top: 35px;
+                        right: 50%;
+                        transform: translateX(50%);
+                        position: absolute;
+                        width: 480px;
+                        height: 320px;
+                    }
+                    .main_overlay {
+                        background-color: transparentize(#572ee5, 0.3);
+                        .overlay_img {
+                            margin-top: 100px;
+                        }
+                        .overlay_text {
+                            @extend %montserrat-bold;
+                            color: white;
+                        }
+                        .overlay_btns {
+                            margin-left: 75%;
+                            margin-top: 25px;
+                            .btn_over_download,
+                            .btn_over_link {
+                                outline: none;
+                                border: none;
+                                box-shadow: none;
+                                border-radius: 6px;
+                                margin: 0 5px;
+                                width: 32px;
+                                height: 32px;
+                                cursor: pointer;
+                            }
+                            .btn_over_download {
+                                background-image: url("../assets/icon-download.svg");
+                                &:hover {
+                                    background-image: url("../assets/icon-download-hover.svg");
+                                }
+                            }
+                            .btn_over_link {
+                                background-image: url("../assets/icon-link-normal.svg");
+                                &:hover {
+                                    background-image: url("../assets/icon-link-hover.svg");
+                                }
+                            }
+                        }
+                    }
+
+                    .screen_title {
+                        color: $violet;
+                        body.darkMode & {
+                            color: white;
+                        }
+                        font-size: 25px;
+                        padding-bottom: 20px;
+                        @extend %montserrat-bold;
+                        .screen_span {
+                            color: $aqua;
+                        }
+                    }
+                    .screen_paragraph {
+                        body.darkMode & {
+                            color: white;
+                        }
+                        font-size: 16px;
+                        line-height: 29px;
+                        @extend %roboto-regular;
+                    }
+                }
+            }
+
+            .center_buttons_container {
+                text-align: center;
+                .empty_placeholder {
+                    width: 128px;
+                }
+                .restartButton {
+                    @extend %montserrat-bold;
+                    color: $violet;
+                    body.darkMode & {
+                        color: white;
+                    }
+                    float: right;
+                    margin-top: -35px;
+                    font-size: 13px;
+                    border-bottom: 2px solid white;
+                    transition: 0.5s;
+                    &:hover {
+                        border-bottom: 2px solid $aqua;
+                    }
+                }
+                .center_buttons {
+                    justify-self: center;
+                    display: flex;
+                    justify-content: center;
+
+                    .stepButton {
+                        @extend %roboto-black;
+                        color: $violet;
+                        font-size: 18px;
+                        display: block;
+                        width: 32px;
+                        height: 32px;
+                        border: 1px solid $violet;
+                        border-radius: 50%;
+                        line-height: 160%;
+                        margin: 10px;
+                        body.darkMode & {
+                            color: white;
+                            border: 1px solid white;
+                        }
+                    }
+                    .active {
+                        color: white;
+                        background-color: $violet;
+                    }
+                }
+            }
+
+            .center_line {
+                border: none;
+                border-top: 7px solid $violet;
+                border-radius: 5px;
+            }
+
+            .button_record,
+            .button_start,
+            .button_stop,
+            .button_upload {
+                @extend %btn;
+            }
+            .button_record,
+            .button_stop,
+            .button_upload {
+                display: none;
+            }
+        }
+        .create_rightCamera {
+            align-self: center;
+        }
+    }
+}

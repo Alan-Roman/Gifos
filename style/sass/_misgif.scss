@@ -1,0 +1,49 @@
+#misGif_content {
+    padding-top: 170px;
+    body.darkMode & {
+        background-color: $light-grey;
+    }
+    .content_title {
+        text-align: center;
+        .content_text {
+            color: #572ee5;
+            body.darkMode & {
+                color: white;
+            }
+            @extend %montserrat-bold;
+            font-size: 25px;
+            @media (min-width: 700px) {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .btn_back {
+        @extend %btn;
+    }
+    .misGif_gallery {
+        @extend %error;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        .result_container_misGif {
+            position: relative;
+            margin: 20px;
+
+            .gif_result {
+                width: 260px;
+                height: 200px;
+            }
+            .gif_hover {
+                display: none;
+            }
+            @media (min-width: 700px) {
+                .gif_hover {
+                    display: block;
+                }
+            }
+            @extend %hover;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import "sass/variables";
+@import "sass/header";
+@import "sass/hero";
+@import "sass/trending";
+@import "sass/footer";
+@import "sass/search";
+@import "sass/fav";
+@import "sass/max";
+@import "sass/misgif";
+@import "sass/create";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+}
+
+body.darkMode {
+    background-color: $light-grey;
+}
+a {
+    text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+

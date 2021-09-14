@@ -1,0 +1,112 @@
+#trend {
+    background-color: #f3f5f8;
+    padding: 50px 0 80px 0;
+    transition: 1s;
+    body.darkMode & {
+        transition: 1s;
+        background-color: $dark-grey;
+    }
+    .trend__title {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 20px;
+        h2 {
+            margin-bottom: 10px;
+            font-size: 25px;
+            @extend %montserrat-bold;
+            color: $violet;
+            body.darkMode & {
+                color: white;
+            }
+        }
+        p {
+            @extend %roboto-regular;
+            body.darkMode & {
+                color: white;
+            }
+        }
+    }
+    .trend__imgs {
+        justify-content: flex-start;
+        display: flex;
+        overflow-x: scroll;
+
+        .result_container {
+            margin: 20px;
+            position: relative;
+            .gif_result {
+                width: 250px;
+                height: 190px;
+            }
+            @extend %hover;
+            .gif_hover {
+                display: none;
+            }
+        }
+    }
+    .left_arrow,
+    .right_arrow {
+        display: none;
+    }
+}
+
+@media (min-width: 970px) {
+    #trend {
+        .trend_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            .left_arrow {
+                display: block;
+                outline: none;
+                border: none;
+                min-width: 40px;
+                height: 40px;
+                cursor: pointer;
+                background-image: url("../assets/button-slider-left.svg");
+                &:hover {
+                    background-image: url("../assets/button-slider-left-hover.svg");
+                }
+                body.darkMode & {
+                    background-image: url("../assets/button-slider-left-md-noct.svg");
+                    &:hover {
+                        background-image: url("../assets/button-slider-left-hover.svg");
+                    }
+                }
+            }
+            .right_arrow {
+                display: block;
+                outline: none;
+                border: none;
+                min-width: 40px;
+                height: 40px;
+                cursor: pointer;
+                background-image: url("../assets/button-slider-right.svg");
+                &:hover {
+                    background-image: url("../assets/button-slider-right-hover.svg");
+                }
+                body.darkMode & {
+                    background-image: url("../assets/button-slider-right-md-noct.svg");
+                    &:hover {
+                        background-image: url("../assets/button-slider-right-hover.svg");
+                    }
+                }
+            }
+            .trend__imgs {
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+                .result_container {
+                    .gif_hover {
+                        display: block;
+                    }
+                    .gif_result {
+                        width: 400px;
+                        height: 275px;
+                    }
+                }
+            }
+        }
+    }
+}
